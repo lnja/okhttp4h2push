@@ -639,9 +639,9 @@ public final class Http2Connection implements Closeable {
         PushObserver pushObserver = PushObserver.CANCEL;
         boolean client;
         int pingIntervalMillis;
-        //{lenJ
+        //{lnja
         EventListener eventListener;
-        //}lenJ
+        //}lnja
 
         /**
          * @param client true if this peer initiated the connection; false if this peer accepted the
@@ -680,12 +680,12 @@ public final class Http2Connection implements Closeable {
             return this;
         }
 
-        //{lenJ
+        //{lnja
         public Builder eventListener(EventListener eventListener) {
             this.eventListener = eventListener;
             return this;
         }
-        //}lenJ
+        //}lnja
 
         public Http2Connection build() {
             return new Http2Connection(this);

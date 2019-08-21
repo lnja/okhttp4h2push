@@ -281,7 +281,7 @@ public abstract class EventListener {
     public void callFailed(Call call, IOException ioe) {
     }
 
-    //{lenJ
+    //{lnja
     /**
      * Describes the request that the server intends to push a response for.
      *
@@ -321,7 +321,7 @@ public abstract class EventListener {
      */
     public void onReset(int streamId, ErrorCode errorCode){
     }
-    //}lenJ
+    //}lnja
 
     public interface Factory {
         /**

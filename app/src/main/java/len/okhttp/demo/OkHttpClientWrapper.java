@@ -88,9 +88,9 @@ public class OkHttpClientWrapper {
             }
         }
         //设置超时
-        builder.connectTimeout(8, TimeUnit.SECONDS);
-        builder.readTimeout(8, TimeUnit.SECONDS);
-        builder.writeTimeout(8, TimeUnit.SECONDS);
+        builder.connectTimeout(15, TimeUnit.SECONDS);
+        builder.readTimeout(15, TimeUnit.SECONDS);
+        builder.writeTimeout(15, TimeUnit.SECONDS);
         //错误重连
         builder.retryOnConnectionFailure(true);
         builder.addInterceptor(createBasicParamsInterceptor(headerParams));

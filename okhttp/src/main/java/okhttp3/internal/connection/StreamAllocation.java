@@ -303,10 +303,10 @@ public final class StreamAllocation {
             callEnd = this.released;
         }
         Util.closeQuietly(socket);
-        //{lenJ TODO Improve HTTP2 Connection
+        //{lnja TODO Improve HTTP2 Connection
         //if (releasedConnection != null) {
         if (releasedConnection != null &&  !releasedConnection.protocol().name().equals("HTTP_2")) {
-            //}lenJ
+            //}lnja
             eventListener.connectionReleased(call, releasedConnection);
         }
 
@@ -472,9 +472,9 @@ public final class StreamAllocation {
         if (this.connection != null) throw new IllegalStateException();
 
         this.connection = connection;
-        //{lenJ
+        //{lnja
         this.connection.setEventListener(eventListener);
-        //}lenJ
+        //}lnja
         this.reportedAcquired = reportedAcquired;
         connection.allocations.add(new StreamAllocationReference(this, callStackTrace));
     }
@@ -511,9 +511,9 @@ public final class StreamAllocation {
 
         // Acquire the new connection.
         this.connection = newConnection;
-        //{lenJ
+        //{lnja
         this.connection.setEventListener(eventListener);
-        //}lenJ
+        //}lnja
         newConnection.allocations.add(onlyAllocation);
 
         return socket;

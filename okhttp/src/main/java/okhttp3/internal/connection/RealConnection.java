@@ -94,9 +94,9 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     private Http2Connection http2Connection;
     private BufferedSource source;
     private BufferedSink sink;
-    //{lenJ
+    //{lnja
     private EventListener eventListener;
-    //}lenJ
+    //}lnja
     public RealConnection(ConnectionPool connectionPool, Route route) {
         this.connectionPool = connectionPool;
         this.route = route;
@@ -275,9 +275,9 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     private void startHttp2(int pingIntervalMillis) throws IOException {
         socket.setSoTimeout(0); // HTTP/2 connection timeouts are set per-stream.
         http2Connection = new Http2Connection.Builder(true)
-                //{lenJ
+                //{lnja
                 .pushObserver(new ReplyPushObserver(eventListener))
-                //}lenJ
+                //}lnja
                 .socket(socket, route.address().url().host(), source, sink)
                 .listener(this)
                 .pingIntervalMillis(pingIntervalMillis)
@@ -618,9 +618,9 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                 + '}';
     }
 
-    //{lenJ
+    //{lnja
     public void setEventListener(EventListener eventListener){
         this.eventListener = eventListener;
     }
-    //}lenJ
+    //}lnja
 }
